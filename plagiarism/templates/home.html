@@ -1,0 +1,1028 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shotota</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* CSS code goes here */
+        /* Rectangle 1 */
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+            position: absolute;
+            width: 100%;
+            height: 100%;
+
+            background: #F7F8FC;
+            border: 1px solid #E9EAEF;
+            border-top: 0;
+            border-left: 0;
+        }
+
+        /* .r2 {
+
+            box-sizing: border-box;
+
+            position: absolute;
+            width: 45px;
+            height: 472px;
+
+            background: #FFFFFF;
+            border: 1px solid #E9EAEF;
+            box-shadow: 6px 0px 10px #E4E5E7;
+        } */
+
+        .r3 {        
+            /* Rectangle 3 */
+            box-sizing: border-box;
+
+            position: absolute;
+            width: 5%;
+            height: 12.5%;
+
+            background: #ffffff;
+            border: 1px solid #E9EAEF;
+        }
+        #menuButton {
+            width: 40px;
+            height: 30px;
+            background-color: white;
+            color: #017CFE; /* Set the menu icon color */
+            text-align: center;
+            cursor: pointer;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            border-radius: 20px / 15px; /* Create horizontal oval shape */
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1; /* Bring menu button above r3 */
+        }
+
+        .r8 {            
+            /* Rectangle 8 */
+            box-sizing: border-box;
+
+            position: absolute;
+            width: 5%;
+            height: 87.5%;
+            top: 12.5%; 
+
+            background: #ffffff;
+            border: 1px solid #E9EAEF;
+            border-top: 0px;
+            left: -100%; 
+            transition: left 0.3s ease-in-out;
+            
+        }
+
+        .r7 {
+            
+            /* Rectangle 7 */
+
+            box-sizing: border-box;
+
+            position: absolute;
+            width: 60.30%;
+            height: 85.38%;
+
+            background: #FFFFFF;
+            border: 1px solid #E9EAEF;
+            top: 11.22%;
+            left: 6.9%;
+            border-radius: 2px;
+            display: flex;
+            flex-direction: column;
+        }
+        .r6 {
+            /* Rectangle 6 */
+
+            box-sizing: border-box;
+            width: 99.6%;
+            height: 88.33%;
+
+            background: #FFFFFF;
+            border: 1px solid #E9EAEF;
+            margin-top: 0px;
+            margin-left: 0px;
+            border-radius:  0px 0px 0px 0px;
+            border-left: none;
+            border-right: none;
+        } 
+        #comments, .comments-container {
+            /* Textarea styles */
+            overflow: auto;
+            width: 100%; /* Take full width of parent */
+            height: 99%;
+            padding-left: 3px;
+            padding-top: 3px;
+            resize: none; /* Disable resizing */
+            border: none; /* Remove border to match parent div's border */
+                
+        }
+        #comments::-webkit-scrollbar {
+            width: 3px; /* Adjust scrollbar width */
+        }
+
+        #comments::-webkit-scrollbar-track {
+            background-color: #f0f0f0; /* Color of the track */
+        }
+
+        #comments::-webkit-scrollbar-thumb {
+            background-color: #888; /* Color of the scrollbar thumb */
+        }
+
+        .r9 {
+            /* Rectangle 9 */
+
+            box-sizing: border-box;
+
+            position: absolute;
+            width: 100%;
+            height: 11.66%;
+
+            background: #FFFFFF;
+            border: 1px solid #E9EAEF;
+            top: 88.33%;
+            margin-left: 0px;
+            border-radius:  0 0 0px 0px;
+            border-left: none;
+            border-right: none;
+        }
+
+        .r40 {
+            /* Rectangle 40 */
+        
+            box-sizing: border-box;
+            position: absolute;
+            width: 37.96%;
+            height: 53.19%;
+            background: #FFFFFF;
+            border: 1px solid #E9EAEF;
+            top: 23.4%;
+            left: 2.22%;
+            border-radius: 2px;
+        
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        h3 {
+            text-align: center; /* Center-align the text within the h2 element */
+        }
+
+        .r38 {
+            /* Rectangle 38 */
+        
+            box-sizing: border-box;
+            position: absolute;
+            width: 37.96%;
+            height: 53.19%;
+            background: #FFFFFF;
+            border: 1px solid #E9EAEF;
+            top: 23.4%;
+            left: 42.22%;
+            border-radius: 2px;
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #uploadForm {
+            text-align: center;
+        }
+        
+        #fileInput {
+            /* If you want to center the file input itself within the form */
+            margin: 0 auto;
+        }
+        
+
+        .r36 {
+            /* Rectangle 36 */
+
+            box-sizing: border-box;
+
+            position: absolute;
+            width: 7%;
+            height: 53.19%;
+
+            background: #FFFFFF;
+            border: 1px solid #E9EAEF;
+            top: 23.4%;
+            left: 90.0%;
+            border-radius: 2px;
+            display: inline-block;
+            text-align: center;
+            overflow: hidden;
+        }
+        .r36 button {
+            width: 100%; /* Set the button's width to 100% to fill the div */
+            height: 100%;
+        }
+
+
+        .r11 { 
+            /* Rectangle 11 */
+
+            box-sizing: border-box;
+
+            position: absolute;
+            width: 14.68%;
+            height: 6.355%;
+
+            background: #FFFFFF;
+            border: 1px solid #E9EAEF;
+            top: 3.6%;
+            left: 52.50%;
+            border-radius: 2px;
+
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .r13 {
+            /* Rectangle 13 */
+
+            box-sizing: border-box;
+
+            position: absolute;
+            width: 12.45%;
+            height: 6.355%;
+
+            background: #FFFFFF;
+            border: 1px solid #E9EAEF;
+            top: 3.6%;
+            left: 39.38%;
+            border-radius: 2px;
+
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+            overflow: hidden;
+            text-align: center;
+        }
+        .green-letter {
+            color: #45CA90;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .purple-letter {
+            color: #5240B3;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+
+        .r16{
+            /* Rectangle 16 */
+
+            box-sizing: border-box;
+
+            position: absolute;
+            width: 15.23%;
+            height: 7.20%;
+
+            background: #017CFE;
+            border: 1px solid #E9EAEF;
+            top: 2.75%;
+            left: 68.63%;
+            border-radius:  2px 0 0 0;
+            font-size: 25px;
+            text-align: center;
+            line-height: 2.5;
+            font-weight: bold;
+            display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: row;
+        }
+
+        .r17 {
+            /* Rectangle 17 */
+
+            box-sizing: border-box;
+
+            position: absolute;
+            width: 15.23%;
+            height: 7.2%;
+
+            background: #FFFFFF;
+            border: 1px solid #E9EAEF;
+            top: 2.75%;
+            left: 83.87%;
+            border-radius:  0 2px 0 0;
+            font-size: 25px;
+            text-align: center;
+            line-height: 2.5;
+            font-weight: bold;
+            display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: row;
+        }
+
+        
+        .r24 {
+            /* Rectangle 24 */
+
+            box-sizing: border-box;
+
+            position: absolute;
+            /* width: 132px;
+            height: 26px; */
+            width: 14.68%;
+            height: 5.5%;
+
+            background: #017CFE;
+            border: 1px solid #E9EAEF;
+            top: 24.78%;
+            left: 76.64%;
+            border-radius: 2px;
+        }
+        .r24 button{
+			width: 100%;
+			height: 100%;
+			background-color: #017cfe;
+			color: white;
+			font-size: 20px;
+			font-weight: bold;
+			border:none;
+			border-radius: 5px;
+		}
+
+        .r26 {
+            /* Rectangle 26 */
+            box-sizing: border-box;
+            position: absolute;
+            width: 30.47%;
+            height: 53.17%;
+
+            background: #FFFFFF;
+            border: 1px solid #E9EAEF;
+            top: 32.83%;
+            left: 68.63%;
+            border-radius: 2px;
+            overflow-y: auto;
+        }
+        .r26::-webkit-scrollbar {
+            width: 3px; /* Adjust scrollbar width */
+        }
+
+        .r26::-webkit-scrollbar-track {
+            background-color: #f0f0f0; /* Color of the track */
+        }
+
+        .r26::-webkit-scrollbar-thumb {
+            background-color: #888; /* Color of the scrollbar thumb */
+        }
+
+        .r33 {
+            /* Rectangle 33 */
+
+            box-sizing: border-box;
+
+            position: absolute;
+            width: 30.47%;
+            height: 8.47%;
+
+            background: #017CFE;
+            border: 1px solid #E9EAEF;
+
+            top: 88.13%;
+            left: 68.63%;
+            border-radius: 2px;
+        }
+        .r33 button{
+			width: 100%;
+			height: 100%;
+			background-color: #017cfe;	
+			border-radius: 5px;
+			color: white;
+			font-size: 25px;
+			font-weight: bold;
+			border:none;
+		}
+        .r29 {
+            /* Rectangle 29 */
+            box-sizing: border-box;
+
+            position: relative;
+            width: 91.2%;
+            height: 16%;
+
+            background: #FEF7F8;
+            border: 1px solid #E9EAEF;
+            top: 4.78%;
+            left: 4.37%;
+            border-radius: 2px;
+            margin-bottom: 10px;
+        }  
+
+        .r43 {
+            /* Rectangle 43 */
+            box-sizing: border-box;
+            position: relative;
+            width: 90%;
+            height: 57.5%;
+            background: #CC4849;
+            /* border: 1px solid #DB9395; */
+            top: 20%;
+            left: 5%;
+            border-radius: 2px;
+			font-size: 25px;
+        }
+
+        .r44 {
+            position: absolute;
+            width: 80%;
+            height: 100%;
+            text-align: left;
+            font-size: 20px;
+            white-space: nowrap; /* Prevent text from wrapping */
+            overflow: hidden; /* Hide overflowing text */
+            text-overflow: ellipsis; /* Show an ellipsis (...) for overflowed text */
+            line-height: 2.5;
+        }
+
+        .r45 {
+            position: absolute;
+            width: 20%;
+            height: 100%;
+            left: 80%;
+            font-size: 25px;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        /* CSS for red text */
+        .red-text {
+            color: red;
+        }
+
+        /* CSS for black text */
+        .black-text {
+            color: black;
+        }
+        .picture {
+			width: 80%;
+			height: 60%;
+			align-content: center;
+			background-image: url("{% static 'images/Shotota_logo.png' %}");
+			background-repeat: no-repeat;
+			background-size: contain;
+			border:2px solid #fff;
+		}
+        #side-menu ul {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		#side-menu li {
+			color: black;
+		}
+        ul li {
+			padding-top: 30px;
+		  }
+        .container {
+			position: absolute;
+			top: 10.44%;
+			left: 68.6%;
+			height: 5.22%;
+            background: #FFFFFF;
+			width:30.3%;
+			display: flex;
+		}
+		
+		.card {
+			position: relative;
+			width: 330px;
+			height: 90px;
+			background: #FFFFFF;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 4px;
+			text-align: center;
+			overflow: hidden;
+			transition: 0.5s;
+			margin-right: 5px;
+			border: 2px solid #E7E8EC;
+			border-radius: 5px;
+		}
+		
+		.card:last-child {
+			margin-right: 0;
+		}
+		
+		.progress-bar {
+			background: rgb(0, 0, 0, 0);
+			width: 80px;
+			display: none;
+			align-items: center;
+			justify-content: center;
+			padding: 0px;
+			position: absolute;
+			left: 40px;
+			top: 0;
+			height: 100%;
+		}
+		
+		.progress-bar:before {
+			content: "";
+			position: absolute;
+			right: 0;
+			width: 50%;
+			height: 100%;
+			background: rgb(0, 0, 0, 0);
+			z-index: 0;
+		}
+		
+		/*===== The CSS =====*/
+		.progress {
+			width: 200px;
+			height: 200px;
+			z-index: 1;
+		}
+		
+		.progress .track,
+		.progress .fill {
+			fill: #f5f5f5;
+			stroke-width: 3;
+			transform: rotate(90deg) translate(0px, -80px);
+		}
+		
+		.progress .track {
+			stroke: #cccccc;
+		}
+		
+		.progress .fill {
+			stroke: #00a043; /* For the first progress circle */
+			stroke-dasharray: 219.99078369140625;
+			stroke-dashoffset: -219.99078369140625;
+			transition: stroke-dashoffset 1s;
+		}
+		
+		.card:last-child .fill {
+			stroke: red; /* For the second progress circle */
+		}
+		
+		.progress .value {
+			fill: black;
+			text-anchor: middle;
+		}
+		.text {
+			position: absolute;
+			top: 0;
+			right: 10px;
+			height: 100%;
+			display: flex;
+			align-items: center;
+		}
+		.percentage {
+			font-size: 1.5em;
+		  } 
+        /* Loading animation */
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width:100%;
+            height:100%;
+        }
+        .loader-wrapper {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #242f3f;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .loader {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            position: relative;
+            border: 4px solid #Fff;
+            animation: loader 2s infinite ease;
+        }
+        .loader-inner {
+            vertical-align: top;
+            display: inline-block;
+            width: 100%;
+            background-color: #fff;
+            animation: loader-inner 2s infinite ease-in;
+        }
+
+        @keyframes loader {
+            0% { transform: rotate(0deg);}
+            25% { transform: rotate(180deg);}
+            50% { transform: rotate(180deg);}
+            75% { transform: rotate(360deg);}
+            100% { transform: rotate(360deg);}
+        }
+
+        @keyframes loader-inner {
+            0% { height: 0%;}
+            25% { height: 0%;}
+            50% { height: 100%;}
+            75% { height: 100%;}
+            100% { height: 0%;}
+        }
+    </style>
+</head>
+<body>
+	<script type="text/javascript">
+		var csrfToken = "{{ csrf_token }}"; // Assign the CSRF token value
+	</script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <div class="r3">
+        <div class="picture"></div>
+        <div id="menuButton" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i> 
+        </div>
+    </div>
+    <div class="r8">
+        <nav id="side-menu">
+            <ul>
+                <li><a href="#"><img src="{% static 'images/Home.png' %}" alt="Home" style="display: block; margin: 0 auto; width: 50%; height: 50%;"></a></li>
+                <li><a href="{% url 'upload' %}"><img src="{% static 'images/write.png' %}" alt="write" style="display: block; margin: 0 auto; width: 50%; height: 50%;"></a></li>
+                <li><a href="{% url 'aboutus' %}"><img src="{% static 'images/profile.png' %}" alt="profile" style="display: block; margin: 0 auto; width: 50%; height: 50%;"></a></li>
+                <li><a href="{% url 'log_out' %}"><img src="{% static 'images/logout.png' %}" alt="profile" style="display: block; margin: 0 auto; width: 50%; height: 50%;"></a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="v1"></div> <!-- menu sign curve -->
+
+    <div class="r7">
+        <div class = "r6">
+            <textarea id="comments" name="comments" ></textarea>
+        </div>
+        <div class="r9">
+            <div class="r36"> <!-- submit button -->
+                <button type="button" id="submitBtn">Submit</button>
+            </div>            
+            <div class="r40">
+                <h3>Upload a File</h3>
+            </div>
+            <div class="r38">
+                <form id="uploadForm" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="file" id="fileInput" name="input_file" accept=" .docx, .pdf, .txt">
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="r11">
+        <span class="purple-letter">C</span>haracter: <span id="charNumber">0</span>
+    </div>
+    <div class="r13">
+        <span class="green-letter" >W</span>ords: <span id="wordNumber">0</span>
+    </div>
+
+    <div class="r16" onclick="p1()"><img  src="{% static 'images/plag.png' %}" style="width: 40px; height: 40px; align-self: left;">Plagiarism</div>
+    <div class="r17" onclick="p2()"><img  src="{% static 'images/bell.png' %}" style="width: 40px; height: 40px; align-self: left;">Alert</div>
+
+    <script >
+        var forEach = function (array, callback, scope) {
+            for (var i = 0; i < array.length; i++) {
+                callback.call(scope, i, array[i]);
+            }
+        };
+
+        // Function to update progress bars
+        function updateProgressBars() {
+            var max = -219.99078369140625;
+            forEach(document.querySelectorAll('.progress'), function (index, value) {
+                var percent = value.getAttribute('data-progress');
+                value.querySelector('.fill').setAttribute('style', 'stroke-dashoffset: ' + ((100 - percent) / 100) * max);
+                value.querySelector('.value').innerHTML = percent + '%';
+            });
+        }
+      </script>
+      <div class="container">
+        <div class="card">
+            <div class="progress-bar">
+                <svg class="progress" data-progress="0" x="0px" y="0px" viewBox="0 0 80 80">
+                    <path class="track" d="M5,40a35,35 0 1,0 70,0a35,35 0 1,0 -70,0" />
+                    <path class="fill" d="M5,40a35,35 0 1,0 70,0a35,35 0 1,0 -70,0" />
+                    <text class="value" x="50%" y="55%">0%</text>
+                </svg>
+            </div>
+            <div class="text">
+                <p><span class="plagScoreText"><strong>0%</strong></span><br><strong>Unique</strong></p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="progress-bar">
+                <svg class="progress" data-progress="0" x="0px" y="0px" viewBox="0 0 80 80">
+                    <path class="track" d="M5,40a35,35 0 1,0 70,0a35,35 0 1,0 -70,0" />
+                    <path class="fill" d="M5,40a35,35 0 1,0 70,0a35,35 0 1,0 -70,0" />
+                    <text class="value" x="50%" y="55%">0%</text>
+                </svg>
+            </div>
+            <div class="text">
+                <p><span class="uniqueScoreText"><strong>0%</strong></span><br><strong>Plagiarized</strong></p>
+            </div>
+        </div>
+    </div>
+    <div class="r19">
+
+    </div>  <!-- percentage -->
+    <div class="r21">
+        
+    </div> <!-- percentage -->
+
+    <div class="r24">
+        <a href="{% url 'generate_report' %}" download>
+            <button>Download Report</button>
+        </a>
+    </div>
+    <div class="r26" id="outerDiv"> <!-- plagirism table --> </div>
+
+    <div class="r33">
+        <button id="reload-btn">Check New Content</button>
+    </div>
+    <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+        </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        var reloadButton = document.getElementById("reload-btn");
+		reloadButton.onclick = function() {
+			window.location.href = "{% url 'reload_page' %}";
+		};
+
+        let menuVisible = false;
+		let globalViewsens = []; 
+
+        function toggleMenu() {
+        const menuButton = document.getElementById("menuButton");
+        const r8 = document.querySelector(".r8");
+
+        if (!menuVisible) {
+            // menuButton.style.left = "20px"; // Move the menu icon to the left
+            r8.style.left = "0"; // Show the r8 div by moving it to the right
+        } else {
+            // menuButton.style.left = "0"; // Return the menu icon to its original position
+            r8.style.left = "-100%"; // Hide the r8 div by moving it back to the left
+        }
+
+        menuVisible = !menuVisible;
+        }
+
+
+
+		// Declare wordNumberElement and charNumberElement in the global scope
+		const wordNumberElement = document.getElementById("wordNumber");
+		const charNumberElement = document.getElementById("charNumber");
+        //const uniquenew = document.getElementById("Unique");
+		//const plagirismnew = document.getElementById("plagScoreValue");
+        
+
+		// Function to update the word count
+		function updateWordCount(newCount, newCount2) {
+			wordCount = newCount;
+			wordNumberElement.textContent = wordCount;
+			charCount = newCount2;
+			charNumberElement.textContent = charCount;
+            //uniquenew.setAttribute('data-progress',newCount3);
+            //plagirismnew.setAttribute('data-progress',newCount4);
+
+
+            
+            
+		}
+
+		// Example: Initially set the word count to 0
+		updateWordCount(0, 0);
+
+		// Example: Simulate changing the word count after some time
+		setTimeout(() => {
+			updateWordCount(0, 0); // Change to a different word count value
+		}, 3000); // Wait for 3 seconds
+
+
+
+		function p1() {
+			// JavaScript to generate dynamic inner divs
+			let outerDiv = document.getElementById("outerDiv");
+			while (outerDiv.firstChild) {
+				outerDiv.removeChild(outerDiv.firstChild);
+			}
+
+			// Define the number of inner divs you want to create dynamically
+			let numberOfInnerDivs = 0;
+			if (globalViewsens && globalViewsens.length) {
+				numberOfInnerDivs = globalViewsens.length;
+			}
+
+			for (let i = 0; i < numberOfInnerDivs; i++) {
+                let payload = globalViewsens[i].payload;
+                let score = globalViewsens[i].score;
+                
+                if(score < 80.0)continue;
+
+                let innerDiv = document.createElement("div");
+                innerDiv.classList.add("r29");
+                
+                let innerDiv2 = document.createElement("div");
+                innerDiv2.classList.add("r43");
+                
+                let x = document.createElement("div");
+                x.classList.add("r44");
+                x.style.backgroundColor = "#FEF7F8";
+                
+                let y = document.createElement("div");
+                y.classList.add("r45");
+
+                // Display the payload and score in the inner div
+
+                x.textContent = payload;
+                y.textContent = score + "%";
+                
+                // Append innerDiv2 to innerDiv
+                innerDiv.appendChild(innerDiv2);
+                
+                // Append x and y to innerDiv2
+                innerDiv2.appendChild(x);
+                innerDiv2.appendChild(y);
+
+                // Append innerDiv to outerDiv
+                outerDiv.appendChild(innerDiv);
+            }
+		}
+
+		function p2() {
+			let outerDiv = document.getElementById("outerDiv");
+			while (outerDiv.firstChild) {
+				outerDiv.removeChild(outerDiv.firstChild);
+			}
+
+			// Define the number of inner divs you want to create dynamically
+			let numberOfInnerDivs = 0;
+			if (globalViewsens && globalViewsens.length) {
+				numberOfInnerDivs = globalViewsens.length;
+			}
+
+			for (let i = 0; i < numberOfInnerDivs; i++) {
+                let payload = globalViewsens[i].payload;
+                let score = globalViewsens[i].score;
+                
+                if(score >= 80.0 || score < 60.0)continue; 
+
+                let innerDiv = document.createElement("div");
+                innerDiv.classList.add("r29");
+                
+                let innerDiv2 = document.createElement("div");
+                innerDiv2.classList.add("r43");
+                
+                let x = document.createElement("div");
+                x.classList.add("r44");
+                x.style.backgroundColor = "#DDDDFF";
+                
+                let y = document.createElement("div");
+                y.classList.add("r45");
+
+
+                x.textContent = payload;
+                y.textContent = score + "%";
+                
+                // Append innerDiv2 to innerDiv
+                innerDiv.appendChild(innerDiv2);
+                
+                // Append x and y to innerDiv2
+                innerDiv2.appendChild(x);
+                innerDiv2.appendChild(y);
+
+                // Append innerDiv to outerDiv
+                outerDiv.appendChild(innerDiv);
+            }
+		}
+		
+		// ajax part of the code
+
+        $(document).ready(function() {
+			var isLoading = false;
+
+            function showLoader() {
+                if (!isLoading) {
+                    isLoading = true;
+                    menuButton.style.display = 'none';
+                    var progressBarElements = document.querySelectorAll('.progress-bar');
+                    progressBarElements.forEach((element) => {
+                        element.style.display = 'none';
+                    });
+                    $(".loader-wrapper").fadeIn("slow");
+                }
+            }
+
+            function hideLoader() {
+                if (isLoading) {
+                    isLoading = false;
+
+                        $(".loader-wrapper").fadeOut("slow", function() {
+                        menuButton.style.display = 'flex';
+                        var progressBarElements = document.querySelectorAll('.progress-bar');
+                        progressBarElements.forEach((element) => {
+                            element.style.display = 'flex';
+                        });
+                    });
+
+                }
+            }
+			$('#submitBtn').click(function() {
+				showLoader();
+				var text = $('#comments').val(); // Get the text from the 
+                var fileInput = document.getElementById('fileInput');
+                var selectedFile = fileInput.files[0]; 
+                var formData = new FormData();
+                formData.append('input_text', text);
+                formData.append('csrfmiddlewaretoken', csrfToken); // Ensure you have csrfToken defined
+
+                // Check if a file is selected and append it to the FormData
+                if (fileInput.files.length > 0) {
+                    formData.append('input_file', fileInput.files[0]);
+                }
+
+				$.ajax({
+					type: 'POST', // Use POST method to send data
+					url: '/input/', // Replace with the URL of your Django view
+					//data: {
+					//	'input_text': text,
+					//	'csrfmiddlewaretoken': csrfToken,
+                    //    'input_file': selectedFile
+					//},
+                    data: formData,
+                    contentType: false, // Set contentType to false to prevent jQuery from transforming the data
+                    processData: false, // Set processData to false to prevent jQuery from processing the data
+					success: function(response) {
+						hideLoader();
+						updateWordCount(response.word,response.character);
+                        
+						globalViewsens = response.viewsen;
+                       var newPlagScore = response.plagScore;
+                       var newUniqueScore = response.uniqueScore;
+                       var newCommentsContainer = $('<div>').addClass('comments-container'); // Create a new div element
+                        response.viewsen.forEach(function(payloadObj) {
+                            var payload = payloadObj.input_sentence;
+                            var score = payloadObj.score;
+                            var textColorClass = score >= 80.0 ? 'red' : score >= 60.0 ? 'blue' : 'black';
+                            var payloadText = '<span style="color:' + textColorClass + '">' + payload +" "+ '</span>';
+                            newCommentsContainer.append(payloadText); // Append each payloadText
+                        });
+                        $('#comments').replaceWith(newCommentsContainer);
+                        $('.plagScoreText').text(newUniqueScore + '%');
+                        $('.uniqueScoreText').text(newPlagScore + '%');
+                        $('.container .card:first-child .progress').attr('data-progress', newUniqueScore);
+                        $('.container .card:nth-child(2) .progress').attr('data-progress', newPlagScore);
+                        updateProgressBars();
+
+                        
+                        
+                    },
+					error: function(error) {
+						hideLoader();
+						console.error(error);
+					}
+				});
+			});
+		});
+    
+        $(window).on("load",function(){
+            $(".loader-wrapper").fadeOut("slow", function() {
+                menuButton.style.display = 'flex';
+                var progressBarElements = document.querySelectorAll('.progress-bar');
+                progressBarElements.forEach((element) => {
+                    element.style.display = 'flex';
+                });
+            });
+        });;
+
+		
+    </script>
+    
+</body>
+</html>

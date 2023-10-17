@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Custom Report</title>
+    <!-- Add any necessary CSS styles for your report -->
+    <style>
+        @font-face {
+            font-family: 'Nikosh';
+            src: url('"C:/Users/Ahmad/Downloads/Nikosh-bengalifont.com_/Nikosh-bengalifont.com/Nikosh.ttf"');
+        }
+    
+        body {
+            font-family: 'Nikosh';
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .report-content {
+            padding: 60px;
+            
+        }
+        .transparent-red-background {
+			background-color: #f6d5d5;
+		  }
+		.transparent-blue-background{
+            background-color: #DDDDFF;
+        }
+		.white-background {
+			background-color: white;
+		  }
+          
+        .word{
+			position: absolute;
+			top : 10%;
+			left: 20%;
+			
+				
+			display: flex;
+			align-items: center;
+			justify-content: left;	
+			
+		}
+		.character{
+			position: absolute;
+			top : 10%;
+			left: 70%;
+			
+				
+			display: flex;
+			align-items: center;
+			justify-content: left;
+			
+		}
+        table {
+			width: 90%;
+			margin: auto;
+			border-radius: 5px;
+			overflow: auto;
+		  }
+		  
+		  
+		
+		  
+		  td {
+			padding: 10px;
+			vertical-align: top;
+			font-weight: bold;
+		  }
+
+         
+    </style>
+</head>
+<body>
+    <h1>রিপোর্ট</h1>
+    {% if viewsen %}
+    <div class="word">
+		<p style = "text-align: center; font-size: 20px; font-weight: bold; padding-left:10px;"><span style="font-weight: bold; color: green; font-size: 30px;">U</span>nique: {{uniqueScore}}% </p>
+	</div>
+	<div class="character">
+		<p style="text-align: center; font-size: 20px; font-weight: bold; padding-left:10px;"><span style="font-weight: bold; color: rgb(62, 2, 158);font-size: 30px;">P</span>lgiarized: {{plagScore}}% </p>
+	</div>
+    
+    <div class="report-content" >
+        <h1>আপনার লেখা:</h1>
+        {% for sentence in viewsen %}
+				<span class="{% if sentence.score > 80 %}transparent-red-background {% elif sentence.score < 80 and sentence.score >= 60 %} transparent-blue-background{% else %}white-background{% endif %}">{{sentence.index}}. {{ sentence.input_sentence }}</span>
+        {% endfor %}
+        <h1>=========================================================================</h1>
+        <table>
+            <tbody>
+                {% for sentence in viewsen %}
+                    {% if sentence.score >= 60 %}
+                        <tr>
+                            <td>{{sentence.index}}. {{ sentence.payload }}</td>
+                            <td>{{ sentence.score }}%</td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <h1>-----------------</h1>
+    {% endif %}
+</body>
+</html>

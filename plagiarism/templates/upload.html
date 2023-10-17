@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+   <style>
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+        background: #F7F8FC;
+        border: 1px solid #E9EAEF;
+        border-top: 0;
+        border-left: 0;
+    }
+
+
+    .r3 {        
+        /* Rectangle 3 */
+        box-sizing: border-box;
+
+        position: absolute;
+        width: 5%;
+        height: 12.5%;
+
+        background: #ffffff;
+        border: 1px solid #E9EAEF;
+    }
+    #menuButton {
+        width: 40px;
+        height: 30px;
+        background-color: white;
+        color: #017CFE; /* Set the menu icon color */
+        text-align: center;
+        cursor: pointer;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        border-radius: 20px / 15px; /* Create horizontal oval shape */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1; /* Bring menu button above r3 */
+    }
+
+    .r8 {            
+        /* Rectangle 8 */
+        box-sizing: border-box;
+
+        position: absolute;
+        width: 5%;
+        height: 87.5%;
+        top: 12.5%; 
+
+        background: #ffffff;
+        border: 1px solid #E9EAEF;
+        border-top: 0px;
+        left: -100%; 
+        transition: left 0.3s ease-in-out;
+        
+    }
+
+    
+    .picture {
+        width: 80%;
+        height: 60%;
+        align-content: center;
+        background-image: url("{% static 'images/Shotota_logo.png' %}");
+        background-repeat: no-repeat;
+        background-size: contain;
+        border:2px solid #fff;
+    }
+    #side-menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    #side-menu li {
+        color: black;
+    }
+    ul li {
+        padding-top: 30px;
+      }
+     
+    
+    /* Borson Css*/
+    .box {
+        position: absolute; 
+        left: 5%;
+        width: 100%;
+        height: 100%;
+        padding-right:3px;
+
+    }
+    
+    
+    #uploadForm {
+    
+
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the file input and submit button */
+#fileInput {
+    margin-bottom: 10px;
+}
+
+button[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* Style the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    left:20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #007BFF;
+    color: #fff;
+}
+/* Style the pending rows with red color */
+.pending-row {
+    background-color: #FF5733; /* Red */
+    color: white;
+}
+
+/* Style the completed rows with green color */
+.completed-row {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+    /* Style the Delete button */
+    .delete-button {
+        height: 20px;
+        width: 50%; /* Make the button width 100% of its parent container (the table cell) */
+        padding: 0px; /* Adjust padding as needed */
+        margin: 0; /* Remove margin */
+        background-color: #009cfd; /* Red background color */
+        color: white; /* Text color */
+        border: none; /* Remove button border */
+        cursor: pointer;
+    }
+    
+     
+    
+    
+   </style>
+</head>
+<body>
+    <script type="text/javascript">
+		var csrfToken = "{{ csrf_token }}"; // Assign the CSRF token value
+	</script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <div class="r3">
+        <div class="picture"></div>
+        <div id="menuButton" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i> 
+        </div>
+    </div>
+    <div class="r8">
+        <nav id="side-menu">
+            <ul>
+                <li><a href="#"><img src="{% static 'images/Home.png' %}" alt="Home" style="display: block; margin: 0 auto; width: 50%; height: 50%;"></a></li>
+                <li><a href="{% url 'upload' %}"><img src="{% static 'images/write.png' %}" alt="write" style="display: block; margin: 0 auto; width: 50%; height: 50%;"></a></li>
+                <li><a href="{% url 'aboutus' %}"><img src="{% static 'images/profile.png' %}" alt="profile" style="display: block; margin: 0 auto; width: 50%; height: 50%;"></a></li>
+                <li><a href="{% url 'log_out' %}"><img src="{% static 'images/logout.png' %}" alt="profile" style="display: block; margin: 0 auto; width: 50%; height: 50%;"></a></li>
+            </ul>
+        </nav>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        
+
+        let menuVisible = false;
+
+        function toggleMenu() {
+        const menuButton = document.getElementById("menuButton");
+        const r8 = document.querySelector(".r8");
+
+        if (!menuVisible) {
+            // menuButton.style.left = "20px"; // Move the menu icon to the left
+            r8.style.left = "0"; // Show the r8 div by moving it to the right
+        } else {
+            // menuButton.style.left = "0"; // Return the menu icon to its original position
+            r8.style.left = "-100%"; // Hide the r8 div by moving it back to the left
+        }
+
+        menuVisible = !menuVisible;
+        }
+
+
+
+		
+
+		
+    </script>
+    <div class="box">
+    <form id="uploadForm" enctype="multipart/form-data" method="POST">
+        {% csrf_token %}
+        <p>Upload a File</p>
+        <input type="file" id="fileInput" name="input_file" accept=" .docx, .pdf, .txt">
+        <button type="submit" onclick="return validateForm();">Submit</button>
+    </form>
+     
+     
+    <script>
+        // checking if no file is being submitted
+        function validateForm() {
+            var fileInput = document.getElementById("fileInput");
+            if (fileInput.files.length === 0) {
+                alert("Please select a file to upload.");
+                return false; // Prevent the form from submitting
+            }
+            return true; // Continue with form submission
+        }
+    </script>
+<table>
+    <tr>
+      <th>File Name</th>
+      <th>Upload Status</th>
+      <th></th>
+    </tr>
+    {%for i in show_files%}
+    <tr class="{% if i.status == 'Pending' %}pending-row{% elif i.status == 'Completed' %}completed-row{% endif %}">
+        <td>{{ i.file.name }}</td>
+        <td>{{ i.status }}</td>
+        <td>
+            {% if i.status == 'Pending' %}
+            <form action="{% url 'delete_file' i.id %}" method="POST">
+                {% csrf_token %}
+                <button class="delete-button">Delete</button>
+            </form>
+            {% endif %}
+        </td>
+    </tr>
+    {%endfor%}
+  </table>
+</div>
+
+ 
+</body>
+</html>
