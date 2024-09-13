@@ -1,14 +1,23 @@
-Bengali, with approximately 273 million speakers, is the seventh most spoken language in the world.
-It is a language of immense richness, dating back to prehistoric times. The absence of a reliable
-Bengali plagiarism detection tool is sad for the Bengali community, particularly in Bangladesh.
-Our academic and professional landscape needs a dedicated Bangla plagiarism detection tool. The
-lack of such a tool has adversely affected the educational landscape in Bangladesh, as journals
-struggle to identify plagiarism in academic papers, and students often get away with copying content from external sources without consequences. ”As reported by tbsnews.net, plagiarism incidents
-in Bangladesh’s universities are on the rise due to the unavailability of a reliable plagiarism detection
-tool.” Book publishers also face challenges as they have to check for plagiarism manually, resulting in
-a time-consuming and laborious process. This situation poses a significant obstacle to maintaining
-academic integrity and fairness within the Bengali community. ”Copyright violations and plagiarism
-are affecting the overall quality of higher education in Bangladesh, according to aa.com.tr.”
-To address this issue, our plagiarism detection tool aims to provide a comprehensive platform
-that caters to the specific needs of various domains. Because Current tools focus on significant
-languages, leaving a critical gap for those working extensively in Bangla.
+# Bangla Plagiarism Detection Tool
+
+Bengali, with approximately 273 million speakers, is the seventh most spoken language in the world. It is a language of immense richness, dating back to prehistoric times. However, the absence of a reliable Bengali plagiarism detection tool has created a significant gap for the Bengali community, particularly in Bangladesh. Our project aims to address this issue by developing a dedicated Bangla plagiarism detection tool to support academic and professional landscapes.
+
+## Problem Statement
+
+The lack of a robust Bangla plagiarism detection tool has adversely affected the educational system in Bangladesh. Without proper tools, plagiarism incidents in academic institutions are increasing. As reported by [[tbsnews.net](https://www.tbsnews.net/bangladesh/education/no-policy-check-plagiarism-bangladesh-212194)], plagiarism incidents in Bangladesh’s universities are on the rise due to the unavailability of reliable plagiarism detection tools. 
+
+### Major Issues:
+- **Academic Papers:** Journals struggle to identify plagiarism in academic papers, allowing students to copy content from external sources without consequences.
+- **Book Publishing:** Book publishers often check for plagiarism manually, a time-consuming and laborious process.
+- **Overall Academic Integrity:** Copyright violations and plagiarism are affecting the overall quality of higher education in Bangladesh.
+
+## Our Solution
+
+This tool aims to bridge the gap by providing a comprehensive platform specifically designed for the Bangla language. Most existing plagiarism detection tools focus on major global languages, leaving a critical gap for those working extensively in Bangla.
+
+### Key Features:
+- **Bangla Language Support:** Tailored to the unique characteristics of the Bangla language.
+- **Academic Focus:** Built for use in universities, journals, and educational institutions to promote academic integrity.
+- **Time-Efficient:** Automates the plagiarism-checking process, reducing the need for manual work.
+- **Wide Domain Coverage:** Suited for various sectors, including academia, publishing, and other professional settings.
+
